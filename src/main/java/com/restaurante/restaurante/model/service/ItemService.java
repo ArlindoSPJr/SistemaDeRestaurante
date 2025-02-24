@@ -1,7 +1,7 @@
 package com.restaurante.restaurante.model.service;
 
 import com.restaurante.restaurante.model.entities.Item;
-import com.restaurante.restaurante.model.entities.TipoPedido;
+import com.restaurante.restaurante.model.entities.TipoItem;
 import com.restaurante.restaurante.model.repositories.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,8 +18,8 @@ public class ItemService {
         return itemRepository.findAll();
     }
 
-    public List<Item> findByTipoPedido(TipoPedido tipoPedido) {
-        return itemRepository.findItemByTipoPedido(tipoPedido);
+    public List<Item> findByTipoPedido(TipoItem tipoItem) {
+        return itemRepository.findItemByTipoItem(tipoItem);
     }
 
     public Item findById(Long id) {

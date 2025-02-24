@@ -17,6 +17,11 @@ public class CarrinhoItem {
 
     public CarrinhoItem() {}
 
+    public CarrinhoItem(Item item, int quantidade) {
+        this.item = item;
+        this.quantidade = quantidade;
+    }
+
     public Long getCarrinhoItemId() {
         return carrinhoItemId;
     }

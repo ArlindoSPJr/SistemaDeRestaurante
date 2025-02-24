@@ -10,7 +10,7 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long itemId;
 
-    private TipoPedido tipoPedido;
+    private TipoItem tipoItem;
     private String nome;
     private String descricao;
     private double valor;
@@ -19,12 +19,12 @@ public class Item {
 
     public Item() {}
 
-    public TipoPedido getTipoPedido() {
-        return tipoPedido;
+    public TipoItem getTipoItem() {
+        return tipoItem;
     }
 
-    public void setTipoPedido(TipoPedido tipoPedido) {
-        this.tipoPedido = tipoPedido;
+    public void setTipoItem(TipoItem tipoItem) {
+        this.tipoItem = tipoItem;
     }
 
     public Long getItemId() {

@@ -18,6 +18,28 @@ public class Carrinho {
 
     private boolean finalizado;
 
+    @ManyToOne
+    @JoinColumn(name = "cliente_cliente_id")
+    private Cliente cliente;
+
+    private double valorTotal;
+
+    public double getValorTotal() {
+        return valorTotal;
+    }
+
+    public void setValorTotal(double valorTotal) {
+        this.valorTotal = valorTotal;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
     public Carrinho() {}
 
     public Long getCarrinhoId() {
@@ -42,5 +64,9 @@ public class Carrinho {
 
     public void setFinalizado(boolean finalizado) {
         this.finalizado = finalizado;
+    }
+
+    public void addItens(CarrinhoItem item) {
+        this.itens.add(item);
     }
 }

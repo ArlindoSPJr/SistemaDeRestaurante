@@ -23,4 +23,16 @@ public class Cliente {
             inverseJoinColumns = @JoinColumn(name = "pedido_id")
     )
     private List<Pedido> pedidos;
+
+    @ManyToOne
+    @JoinColumn(name = "carrinho_carrinho_id")
+    private Carrinho carrinho;
+
+    public Carrinho getCarrinho() {
+        return carrinho;
+    }
+
+    public void setCarrinho(Carrinho carrinho) {
+        this.carrinho = carrinho;
+    }
 }

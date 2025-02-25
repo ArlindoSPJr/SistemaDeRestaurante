@@ -14,8 +14,18 @@ public class Item {
     private String nome;
     private String descricao;
     private double valor;
+    @ManyToOne
+    @JoinColumn(name = "imagem_imagem_id")
     private Imagem imagem;
     private Integer quantidade;
+
+    public Imagem getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(Imagem imagem) {
+        this.imagem = imagem;
+    }
 
     public Item() {}
 

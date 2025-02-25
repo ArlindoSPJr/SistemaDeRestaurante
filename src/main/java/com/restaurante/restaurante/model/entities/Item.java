@@ -14,7 +14,7 @@ public class Item {
     private String nome;
     private String descricao;
     private double valor;
-    private String caminhoDaImagem;
+    private Imagem imagem;
     private Integer quantidade;
 
     public Item() {}
@@ -59,13 +59,7 @@ public class Item {
         this.valor = valor;
     }
 
-    public String getCaminhoDaImagem() {
-        return caminhoDaImagem;
-    }
 
-    public void setCaminhoDaImagem(String caminhoDaImagem) {
-        this.caminhoDaImagem = caminhoDaImagem;
-    }
 
     public Integer getQuantidade() {
         return quantidade;

@@ -1,11 +1,23 @@
 meta {
-  name: Criar Cliente 
+  name: Criar Cliente
   type: http
   seq: 3
 }
 
 post {
   url: http://localhost:8080/clientes
-  body: none
-  auth: none
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpc3MiOiJBZ2VuZGFtZW50b0NvbVNjaGVkdWxlIiwiaWQiOjEsImV4cCI6MTc0MDQ0ODU5OX0.JtYB47vYHXHcfHW9KYPSIrFFa_g5HLJPMGm_clU33uc
+}
+
+body:json {
+  {
+    "nome" : "vitor",
+    "cpf" : "018.955.506-88",
+    "password" : 123
+  }
 }

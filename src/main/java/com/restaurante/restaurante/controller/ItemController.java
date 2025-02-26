@@ -15,11 +15,9 @@ import org.springframework.web.util.UriComponentsBuilder;
 public class ItemController {
 
     private final ItemService itemService;
-    private final ImagemService imagemService;
 
-    public ItemController(ItemService itemService, ImagemService imagemService) {
+    public ItemController(ItemService itemService) {
         this.itemService = itemService;
-        this.imagemService = imagemService;
     }
 
     @PostMapping
@@ -28,7 +26,6 @@ public class ItemController {
                                         UriComponentsBuilder uriBuilder){
 
         try {
-//            Imagem imagem = imagemService.salvarImagem(file);
             var itemNovo = new Item(dados);
             itemService.save(itemNovo);
 

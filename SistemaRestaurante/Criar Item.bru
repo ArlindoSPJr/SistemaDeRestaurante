@@ -1,0 +1,25 @@
+meta {
+  name: Criar Item
+  type: http
+  seq: 5
+}
+
+post {
+  url: http://localhost:8080/item
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpc3MiOiJBZ2VuZGFtZW50b0NvbVNjaGVkdWxlIiwiaWQiOjEsImV4cCI6MTc0MDUyOTEyNX0.WLHkKIVNuygvfnvYJaz9YbFxOSLPjuJ_nGT52UJrn1w
+}
+
+body:json {
+  {
+    "nome": "Item Exemplo", 
+    "descricao": "Descrição do item", 
+    "valor": 100.00, 
+    "tipoItem" : "PIZZA", 
+    "quantidade": 10
+  }
+}

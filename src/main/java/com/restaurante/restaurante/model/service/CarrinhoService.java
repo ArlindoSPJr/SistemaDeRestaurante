@@ -44,9 +44,11 @@ public class CarrinhoService {
             carrinho.setCliente(clienteEncontrado);
         }
 
+        clienteEncontrado.setCarrinho(carrinho);
         CarrinhoItem carrinhoItem = new CarrinhoItem();
         carrinhoItem.setItem(itemEncontrado);
         carrinhoItem.setQuantidade(quantidadeItem);
+        carrinho.addItens(carrinhoItem);
         carrinho.setValorTotal(carrinho.getValorTotal() + (itemEncontrado.getValor() * quantidadeItem));
 
         return carrinhoRepositoy.save(carrinho);

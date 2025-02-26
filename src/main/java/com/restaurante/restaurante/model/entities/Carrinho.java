@@ -2,12 +2,12 @@ package com.restaurante.restaurante.model.entities;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "carrinho")
 public class Carrinho {
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,6 +24,10 @@ public class Carrinho {
 
     private double valorTotal;
 
+    public Carrinho(){
+        this.itens = new ArrayList<CarrinhoItem>();
+    }
+
     public double getValorTotal() {
         return valorTotal;
     }
@@ -39,8 +43,6 @@ public class Carrinho {
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
-
-    public Carrinho() {}
 
     public Long getCarrinhoId() {
         return carrinhoId;

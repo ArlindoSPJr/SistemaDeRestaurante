@@ -83,14 +83,14 @@ public class CarrinhoService {
         }
 
         Pedido novoPedido = new Pedido();
+
         novoPedido.setStatusPedido(StatusPedido.CONFIRMADO);
         novoPedido.setCliente(clienteEncontrado);
         novoPedido.setValorTotal(carrinhoEncontrado.getValorTotal());
-
-        clienteEncontrado.addPedido(novoPedido);
+        novoPedido.setCliente(clienteEncontrado);
+        novoPedido.setCarrinho(carrinhoEncontrado);
 
         carrinhoEncontrado.setFinalizado(true);
-        carrinhoEncontrado.setPedido(novoPedido);
         carrinhoRepositoy.save(carrinhoEncontrado);
 
         pedidoRepository.save(novoPedido);

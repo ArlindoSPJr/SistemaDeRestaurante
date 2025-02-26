@@ -65,6 +65,11 @@ public class CarrinhoService {
             throw new ResourceNotFoundException("Carrinho vazio. Não é possivel finalizar compra!");
         }
 
+        Cliente clienteEncontrado = clienteRepository.findByClienteId(carrinhoEncontrado.getCliente().getClienteId());
+        if (clienteEncontrado == null) {
+            throw new ResourceNotFoundException("Cliente não encontrado pelo carrinho");
+        }
+
         for (CarrinhoItem item : carrinhoEncontrado.getItens()){
             Item itemEncontrado = item.getItem();
             int novaQuantidade = itemEncontrado.getQuantidade() - item.getQuantidade();
@@ -77,9 +82,15 @@ public class CarrinhoService {
             itemRepository.save(itemEncontrado);
         }
 
-        Pedido novoPedido = new Pedido(carrinhoEncontrado.getValorTotal(), StatusPedido.CONFIRMADO, carrinhoEncontrado);
+        Pedido novoPedido = new Pedido();
+        novoPedido.setStatusPedido(StatusPedido.CONFIRMADO);
+        novoPedido.setCliente(clienteEncontrado);
+        novoPedido.setValorTotal(carrinhoEncontrado.getValorTotal());
+
+        clienteEncontrado.addPedido(novoPedido);
 
         carrinhoEncontrado.setFinalizado(true);
+        carrinhoEncontrado.setPedido(novoPedido);
         carrinhoRepositoy.save(carrinhoEncontrado);
 
         pedidoRepository.save(novoPedido);

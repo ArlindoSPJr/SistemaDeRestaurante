@@ -10,7 +10,12 @@ public class Pedido {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long pedidoId;
     private double valorTotal;
+    @Enumerated(EnumType.STRING)
     private StatusPedido statusPedido;
+
+    @ManyToOne
+    @JoinColumn(name = "cliente_cliente_id")
+    private Cliente cliente;
 
     @OneToOne
     @JoinTable(
@@ -19,6 +24,14 @@ public class Pedido {
             inverseJoinColumns = @JoinColumn(name = "carrinho_id")
     )
     private Carrinho carrinho;
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
 
     public Pedido() {}
 

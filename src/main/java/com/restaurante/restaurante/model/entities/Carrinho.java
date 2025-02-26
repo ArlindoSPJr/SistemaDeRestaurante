@@ -24,6 +24,18 @@ public class Carrinho {
 
     private double valorTotal;
 
+    @ManyToOne
+    @JoinColumn(name = "pedido_pedido_id")
+    private Pedido pedido;
+
+    public Pedido getPedido() {
+        return pedido;
+    }
+
+    public void setPedido(Pedido pedido) {
+        this.pedido = pedido;
+    }
+
     public Carrinho(){
         this.itens = new ArrayList<CarrinhoItem>();
     }

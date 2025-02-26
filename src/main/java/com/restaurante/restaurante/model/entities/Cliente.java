@@ -87,4 +87,8 @@ public class Cliente {
     public void setPedidos(List<Pedido> pedidos) {
         this.pedidos = pedidos;
     }
+
+    public void addPedido(Pedido pedido) {
+        this.pedidos.add(pedido);
+    }
 }

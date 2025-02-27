@@ -2,6 +2,7 @@ package com.restaurante.restaurante.controller;
 
 import com.restaurante.restaurante.controller.dto.AddItensNoCarrinhoDto;
 import com.restaurante.restaurante.controller.dto.DadosDetalhamentoCarrinho;
+import com.restaurante.restaurante.controller.dto.DadosDetalhamentoPedido;
 import com.restaurante.restaurante.model.service.CarrinhoService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -25,7 +26,7 @@ public class CarrinhoController {
 
     @PostMapping("/finalizar/{carrinhoId}")
     public ResponseEntity finalizarCompra(@PathVariable long carrinhoId){
-        carrinhoService.finalizarCompra(carrinhoId);
-        return ResponseEntity.ok().build();
+        var pedido = carrinhoService.finalizarCompra(carrinhoId);
+        return ResponseEntity.ok().body(new DadosDetalhamentoPedido(pedido));
     }
 }

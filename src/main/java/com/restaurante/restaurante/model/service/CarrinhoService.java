@@ -52,10 +52,9 @@ public class CarrinhoService {
         carrinho.setValorTotal(carrinho.getValorTotal() + (itemEncontrado.getValor() * quantidadeItem));
 
         return carrinhoRepositoy.save(carrinho);
-
     }
 
-    public void finalizarCompra(Long carrinhoId){
+    public Pedido finalizarCompra(Long carrinhoId){
         Carrinho carrinhoEncontrado = carrinhoRepositoy.findByCarrinhoId(carrinhoId);
         if (carrinhoEncontrado == null) {
             throw new ResourceNotFoundException("Carrinho com id: " + carrinhoId + " não encontrado!");
@@ -92,7 +91,7 @@ public class CarrinhoService {
         carrinhoEncontrado.setFinalizado(true);
         carrinhoRepositoy.save(carrinhoEncontrado);
 
-        pedidoRepository.save(novoPedido);
+        return pedidoRepository.save(novoPedido);
 
     }
 

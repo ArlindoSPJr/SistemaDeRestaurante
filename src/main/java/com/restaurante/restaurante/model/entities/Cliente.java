@@ -17,12 +17,7 @@ public class Cliente {
     private String cpf;
     private String password;
 
-    @ManyToMany
-    @JoinTable(
-            name = "cliente_pedido", // Nome da tabela intermediária
-            joinColumns = @JoinColumn(name = "cliente_id"),
-            inverseJoinColumns = @JoinColumn(name = "pedido_id")
-    )
+    @OneToMany(mappedBy = "cliente")
     private List<Pedido> pedidos;
 
     @ManyToOne

@@ -14,16 +14,13 @@ public class Pedido {
     private StatusPedido statusPedido;
 
     @ManyToOne
-    @JoinColumn(name = "cliente_cliente_id")
+    @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
     @OneToOne
-    @JoinTable(
-            name = "pedido_carrinho", // Nome da tabela intermediária
-            joinColumns = @JoinColumn(name = "pedido_id"),
-            inverseJoinColumns = @JoinColumn(name = "carrinho_id")
-    )
+    @JoinColumn(name = "carrinho_id")
     private Carrinho carrinho;
+
 
     public Cliente getCliente() {
         return cliente;

@@ -87,7 +87,6 @@ public class CarrinhoService {
         novoPedido.setStatusPedido(StatusPedido.CONFIRMADO);
         novoPedido.setCliente(clienteEncontrado);
         novoPedido.setValorTotal(carrinhoEncontrado.getValorTotal());
-        novoPedido.setCliente(clienteEncontrado);
         novoPedido.setCarrinho(carrinhoEncontrado);
 
         carrinhoEncontrado.setFinalizado(true);

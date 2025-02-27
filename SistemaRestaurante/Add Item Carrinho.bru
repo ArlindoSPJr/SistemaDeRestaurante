@@ -6,6 +6,18 @@ meta {
 
 post {
   url: http://localhost:8080/carrinho
-  body: none
-  auth: none
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpc3MiOiJBZ2VuZGFtZW50b0NvbVNjaGVkdWxlIiwiaWQiOjEsImV4cCI6MTc0MDYxNjI3NX0.KEHILhsOJdz6DdNxfzZwY7Tziadw2nXrO_7UrYe20RI
+}
+
+body:json {
+  {
+    "clienteId" : 2,
+    "itemId" : 1,
+    "quantidade" : 2
+  }
 }

@@ -24,8 +24,7 @@ public class Carrinho {
 
     private double valorTotal;
 
-    @ManyToOne
-    @JoinColumn(name = "pedido_pedido_id")
+    @OneToOne(mappedBy = "carrinho")
     private Pedido pedido;
 
     public Pedido getPedido() {

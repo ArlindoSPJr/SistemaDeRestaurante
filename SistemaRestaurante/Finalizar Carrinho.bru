@@ -5,7 +5,11 @@ meta {
 }
 
 post {
-  url: http://localhost:8080/carrinho/finalizar/id
+  url: http://localhost:8080/carrinho/finalizar/2
   body: none
-  auth: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpc3MiOiJBZ2VuZGFtZW50b0NvbVNjaGVkdWxlIiwiaWQiOjEsImV4cCI6MTc0MDYxNzQ3M30.t21-qdPOiZ3nnA1pMaWZRAB5ALjvC97s_6X3Qkh7YvE
 }

@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface PedidoRepository extends JpaRepository<Pedido, Long> {
     List<Pedido> findPedidoByCliente(Cliente cliente);
-
+    Pedido findByPedidoId(Long pedidoId);
     List<Pedido> findPedidoByClienteCpf(String cpf);
 }

@@ -4,8 +4,19 @@ meta {
   seq: 8
 }
 
-post {
-  url: http://localhost:8080/carrinho/pedido
-  body: none
-  auth: none
+put {
+  url: http://localhost:8080/pedido
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpc3MiOiJBZ2VuZGFtZW50b0NvbVNjaGVkdWxlIiwiaWQiOjEsImV4cCI6MTc0MDc2MTcwMX0.kuvWo41DemPvqgM4ZhL2qcDqJcmkVlNqL5fZ8Yg3qQY
+}
+
+body:json {
+  {
+    "pedidoId" : 2,
+    "statusPedido" : "ENTREGUE"
+  }
 }

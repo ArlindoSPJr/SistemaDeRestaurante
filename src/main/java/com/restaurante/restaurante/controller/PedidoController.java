@@ -1,9 +1,7 @@
 package com.restaurante.restaurante.controller;
 
 import com.restaurante.restaurante.controller.dto.AlterarStatusPedido;
-import com.restaurante.restaurante.exceptions.ResourceNotFoundException;
 import com.restaurante.restaurante.model.entities.Pedido;
-import com.restaurante.restaurante.model.entities.StatusPedido;
 import com.restaurante.restaurante.model.repositories.PedidoRepository;
 import com.restaurante.restaurante.model.service.PedidoService;
 import org.springframework.http.ResponseEntity;
